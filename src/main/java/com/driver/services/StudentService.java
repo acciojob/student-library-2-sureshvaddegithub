@@ -18,7 +18,7 @@ public class StudentService {
     StudentRepository studentRepository4;
 
     public Student getDetailsByEmail(String email){
-        Student student = studentRepository4.findByEmailId();
+        Student student = studentRepository4.findByEmailId(email);
 
         return student;
     }
