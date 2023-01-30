@@ -32,15 +32,15 @@ public class BookService {
         if(genre!=null && author != null){
             return bookRepository2.findBooksByGenreAuthor(genre,author,available);
         }
-        else if(genre!=null){
+        if(genre!=null && author==null){
             return bookRepository2.findBooksByGenre(genre,available);
         }
-        else if(author!=null){
+        if(author!=null&&  genre==null){
             return bookRepository2.findBooksByAuthor(author,available);
         }
-        else{
+
            return bookRepository2.findByAvailability(available);
-        }
+
 
     }
 }
